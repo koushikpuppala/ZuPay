@@ -1,0 +1,9 @@
+{
+	"name": "@repo/config",
+	"version": "0.0.1",
+	"private": true,
+	"packageManager": "yarn@4.4.0",
+	"exports": {
+		"./*tsconfig.json": "./*tsconfig.json"
+	}
+}

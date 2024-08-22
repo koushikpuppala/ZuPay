@@ -1,0 +1,30 @@
+{
+	"name": "blog",
+	"version": "0.0.1",
+	"private": true,
+	"packageManager": "yarn@4.4.0",
+	"workspaces": [
+		"projects/*",
+		"packages/*"
+	],
+	"scripts": {
+		"start": "turbo run start",
+		"build": "turbo run build",
+		"clean": "turbo run clean",
+		"dev": "turbo run dev",
+		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
+		"lint": "turbo run lint",
+		"test": "turbo run test",
+		"update": "turbo run update"
+	},
+	"devDependencies": {
+		"prettier": "^3.3.2",
+		"prettier-plugin-tailwindcss": "^0.6.4",
+		"turbo": "^2.0.14"
+	},
+	"engines": {
+		"node": ">= 20.11.x",
+		"npm": ">= 10.4.x",
+		"yarn": ">= 4.4.x"
+	}
+}
