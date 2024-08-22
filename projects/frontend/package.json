@@ -1,0 +1,52 @@
+{
+	"name": "frontend",
+	"version": "0.0.1",
+	"private": true,
+	"packageManager": "yarn@4.4.0",
+	"main": "next.config.mjs",
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"watch": "tsc --watch",
+		"update": "ncu -u -x eslint"
+	},
+	"dependencies": {
+		"@headlessui/react": "^2.1.2",
+		"@repo/database": "workspace:^",
+		"animate.css": "^4.1.1",
+		"antd": "^5.20.2",
+		"classnames": "^2.5.1",
+		"date-fns": "^3.6.0",
+		"dayjs": "^1.11.13",
+		"firebase": "^10.13.0",
+		"framer-motion": "^11.3.29",
+		"lodash": "^4.17.21",
+		"mongoose": "^8.5.3",
+		"next": "^14.2.6",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-icons": "^5.3.0",
+		"react-toastify": "^10.0.5",
+		"sharp": "^0.33.5",
+		"zod": "^3.23.8",
+		"zod-validation-error": "^3.3.1"
+	},
+	"devDependencies": {
+		"@repo/types": "workspace:^",
+		"@types/lodash": "^4",
+		"@types/node": "^22.5.0",
+		"@types/react": "^18.3.4",
+		"@types/react-dom": "^18.3.0",
+		"autoprefixer": "^10.4.20",
+		"cssnano": "^7.0.5",
+		"eslint": "^8.56.0",
+		"eslint-config-next": "^14.2.6",
+		"postcss": "^8.4.41",
+		"postcss-import": "^16.1.0",
+		"sass": "^1.77.8",
+		"tailwindcss": "^3.4.10",
+		"typescript": "^5.5.4"
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"display": "Next.js with TypeScript",
+	"extends": "@repo/config/tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": "." /* Specify the base directory to resolve non-relative module names. */,
+		"paths": {
+			"@import/*": ["src/*", "*"]
+		} /* Specify a set of entries that re-map imports to additional lookup locations. */,
+		"plugins": [
+			{
+				"name": "next"
+			}
+		] /* Use TypeScript-specific functionality in Next.js pages and API routes. */,
+		"rootDir": "./" /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
+	},
+	"include": ["next-env.d.ts", "next.config.mjs", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"]
+}
