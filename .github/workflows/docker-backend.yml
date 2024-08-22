@@ -1,0 +1,83 @@
+name: 'Backend Docker Image'
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'projects/backend/**'
+      - 'packages/**'
+      - 'docker/Dockerfile.backend'
+
+env:
+  # Use docker.io for Docker Hub if empty
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository_owner }}/iiitraichur-backend
+  DOCKERFILE_PATH: 'docker/Dockerfile.backend'
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4.1.4
+
+      # Get version from package.json using GITHUB_OUTPUT
+      - name: Get version
+        id: version
+        run: echo "VERSION=$(node -p "require('./projects/backend/package.json').version")" >> "$GITHUB_OUTPUT"
+
+      # Create a .env file for the backend
+      - name: Create .env file
+        run: echo "PORT=3000" >> .env
+
+      # Set up BuildKit Docker container builder to be able to build
+      # multi-platform images and export cache
+      # https://github.com/docker/setup-buildx-action
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3.3.0
+
+      # Login against a Docker registry except on PR
+      # https://github.com/docker/login-action
+      - name: Log into registry ${{ env.REGISTRY }}
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3.1.0
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Extract metadata (tags, labels) for Docker
+      # https://github.com/docker/metadata-action
+      - name: Extract metadata
+        id: metadata
+        uses: docker/metadata-action@v5.5.1
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            ${{ github.ref == 'refs/heads/master' && 'latest' || 'dev' }}
+            ${{ github.ref == 'refs/heads/master' && steps.version.outputs.VERSION || '' }}
+          labels: |
+            org.opencontainers.image.title=Zupay Blog Assignment Backend
+            org.opencontainers.image.description=Zupay Blog Assignment Backend Docker image
+
+      # Build and push Docker image with Buildx except on pull requests
+      # https://github.com/docker/build-push-action
+      - name: Build and push Docker image
+        id: build-push
+        uses: docker/build-push-action@v5.3.0
+        with:
+          context: .
+          file: ${{ env.DOCKERFILE_PATH }}
+          tags: ${{ steps.metadata.outputs.tags }}
+          labels: ${{ steps.metadata.outputs.labels }}
+          push: ${{ github.event_name != 'pull_request' }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
