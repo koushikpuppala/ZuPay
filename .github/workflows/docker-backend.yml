@@ -5,8 +5,11 @@ on:
     branches:
       - master
     paths:
-      - 'projects/backend/**'
+      - 'yarn.lock'
+      - 'turbo.json'
       - 'packages/**'
+      - 'package.json'
+      - 'projects/backend/**'
       - 'docker/Dockerfile.backend'
       - '.github/workflows/docker-backend.yml'
 
