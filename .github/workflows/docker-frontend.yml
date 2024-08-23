@@ -9,19 +9,12 @@ on:
       - 'projects/frontend/**'
       - 'packages/**'
       - 'docker/Dockerfile.frontend'
-  pull_request:
-    branches:
-      - master
-      - dev
-    paths:
-      - 'projects/frontend/**'
-      - 'packages/**'
-      - 'docker/Dockerfile.frontend'
+      - '.github/workflows/docker-frontend.yml'
 
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/iiitraichur-frontend
+  IMAGE_NAME: ${{ github.repository_owner }}/zupay-frontend
   DOCKERFILE_PATH: 'docker/Dockerfile.frontend'
 
 permissions:

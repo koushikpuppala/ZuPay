@@ -8,11 +8,12 @@ on:
       - 'projects/backend/**'
       - 'packages/**'
       - 'docker/Dockerfile.backend'
+      - '.github/workflows/docker-backend.yml'
 
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/iiitraichur-backend
+  IMAGE_NAME: ${{ github.repository_owner }}/zupay-backend
   DOCKERFILE_PATH: 'docker/Dockerfile.backend'
 
 permissions:
