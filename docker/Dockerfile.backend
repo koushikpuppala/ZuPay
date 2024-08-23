@@ -8,7 +8,7 @@ FROM base AS dependencies
 RUN corepack enable
 
 # Install compatibility libraries
-RUN apk add --no-cache libc6-compat
+RUN apt install libc6-compat
 
 # Set the working directory to /app
 WORKDIR /app
@@ -29,7 +29,7 @@ FROM base AS builder
 RUN corepack enable
 
 # Install compatibility libraries
-RUN apk add --no-cache libc6-compat
+RUN apt install libc6-compat
 
 # Set the working directory to /app
 WORKDIR /app
@@ -65,7 +65,7 @@ RUN yarn turbo build --filter=backend...
 FROM base AS runner
 
 # Install additional packages: curl and bash
-RUN apk add --no-cache curl bash
+RUN apt install curl bash
 
 # Set the working directory to /app
 WORKDIR /app
