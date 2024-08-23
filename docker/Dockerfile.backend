@@ -7,9 +7,6 @@ FROM base AS dependencies
 # Enable Corepack, which provides a consistent way to manage package managers
 RUN corepack enable
 
-# Install compatibility libraries
-RUN apt install libc6-compat
-
 # Set the working directory to /app
 WORKDIR /app
 
@@ -27,9 +24,6 @@ FROM base AS builder
 
 # Enable Corepack again in the builder stage
 RUN corepack enable
-
-# Install compatibility libraries
-RUN apt install libc6-compat
 
 # Set the working directory to /app
 WORKDIR /app
@@ -63,9 +57,6 @@ RUN yarn turbo build --filter=backend...
 
 # Create a new stage called "runner" based on the "base" image
 FROM base AS runner
-
-# Install additional packages: curl and bash
-RUN apt install curl bash
 
 # Set the working directory to /app
 WORKDIR /app
