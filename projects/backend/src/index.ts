@@ -35,10 +35,12 @@ app.use(cookieParser())
 
 app.get('/', (_req, res) => res.status(200).json({ message: 'API server Running /' }))
 
+app.get('/health', (_req, res) => res.status(200).json({ message: 'API Health Check' }))
+
 app.use('/', router)
 
 MongoDB.client.on('error', console.log.bind(console, 'connection error:'))
 MongoDB.client.once('open', async () => {
 	console.log(process.env.NODE_ENV === 'production' ? 'Connected to Prod MongoDB' : 'Connected to Dev MongoDB')
-	app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
+	app.listen(PORT, '0.0.0.0', () => console.log(`Server started on port ${PORT}`))
 })
