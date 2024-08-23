@@ -22,6 +22,8 @@ class Database {
 	public async connect(): Promise<void> {
 		if (this._client?.readyState === 1) return
 
+		console.log('Connecting to MongoDB...', process.env.MONGO_URI)
+
 		await connect(process.env.MONGO_URI!, {
 			dbName: process.env.ENVIRONMENT ?? 'development',
 			monitorCommands: true,
