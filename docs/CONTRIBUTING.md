@@ -35,27 +35,34 @@ A step-by-step series of examples that tell you how to get a development environ
     cd ZuPay
     ```
 
-3. Set the stable version of yarn
+3. Rename .env.example to .env.local and fill in the required environment variables in both frontend and backend directories
 
     ```bash
-     yarn set version stable
+    mv projects/frontend/.env.example frontend/.env.local
+    mv projects/backend/.env.example backend/.env.local
     ```
 
-4. Install the dependencies
+4. Set the yarn version to 4.4.0 for this project
+
+    ```bash
+     yarn set version 4.4.0
+    ```
+
+5. Install the dependencies
 
     ```bash
      yarn install
     ```
 
-5. Run the development server
+6. Run the development server
 
     ```bash
      yarn dev
     ```
 
-6. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result for the Frontend of the website.
+7. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result for the Frontend of the website.
 
-7. Open [http://localhost:8080](http://localhost:8080) with your browser to see the result for the Backend of the website.
+8. Open [http://localhost:8080](http://localhost:8080) with your browser to see the result for the Backend of the website.
 
 ## Testing
 
