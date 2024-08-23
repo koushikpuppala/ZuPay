@@ -4,7 +4,10 @@ import { cookies } from 'next/headers'
 
 export const setCookie = (name: string, value: string) => {
 	cookies().set(name, value, {
-		domain: process.env.ENVIRONMENT === 'production' ? process.env.NEXT_PUBLIC_ROOT_URL : 'localhost',
+		domain:
+			process.env.ENVIRONMENT === 'production'
+				? process.env.NEXT_PUBLIC_ROOT_URL!.split('https://')[1]
+				: 'localhost',
 		secure: process.env.ENVIRONMENT === 'production',
 		sameSite: 'strict',
 		httpOnly: true,
@@ -16,7 +19,10 @@ export const setCookie = (name: string, value: string) => {
 export const removeCookie = (name: string) => {
 	cookies().delete({
 		name,
-		domain: process.env.ENVIRONMENT === 'production' ? process.env.NEXT_PUBLIC_ROOT_URL : 'localhost',
+		domain:
+			process.env.ENVIRONMENT === 'production'
+				? process.env.NEXT_PUBLIC_ROOT_URL!.split('https://')[1]
+				: 'localhost',
 		secure: process.env.ENVIRONMENT === 'production',
 		sameSite: 'strict',
 		httpOnly: true,
