@@ -86,7 +86,7 @@ Zod is used to validate the request body parameters. The following error handler
 
 ## Installation and Setup
 
-Please refer to the [CONTRIBUTING.md](./CONTRIBUTING.md) file for detailed instructions on how to set up the project locally.
+Please refer to the [CONTRIBUTING.md](./docs/CONTRIBUTING.md) file for detailed instructions on how to set up the project locally.
 
 ## License
 

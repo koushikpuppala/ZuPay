@@ -38,8 +38,8 @@ A step-by-step series of examples that tell you how to get a development environ
 3. Rename .env.example to .env.local and fill in the required environment variables in both frontend and backend directories
 
     ```bash
-    mv projects/frontend/.env.example frontend/.env.local
-    mv projects/backend/.env.example backend/.env.local
+    mv projects/frontend/.env.example projects/frontend/.env.local
+    mv projects/backend/.env.example projects/backend/.env.local
     ```
 
 4. Set the yarn version to 4.4.0 for this project
