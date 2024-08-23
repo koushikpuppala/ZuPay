@@ -11,6 +11,7 @@
 		"update": "ncu -u"
 	},
 	"dependencies": {
+		"@repo/config": "workspace:^",
 		"@repo/database": "workspace:^",
 		"cookie-parser": "^1.4.6",
 		"cors": "^2.8.5",

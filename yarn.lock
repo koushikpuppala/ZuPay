@@ -1578,7 +1578,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@repo/config@workspace:packages/config":
+"@repo/config@workspace:^, @repo/config@workspace:packages/config":
   version: 0.0.0-use.local
   resolution: "@repo/config@workspace:packages/config"
   languageName: unknown
@@ -2462,6 +2462,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "backend@workspace:projects/backend"
   dependencies:
+    "@repo/config": "workspace:^"
     "@repo/database": "workspace:^"
     "@repo/types": "workspace:^"
     "@types/cookie-parser": "npm:^1.4.7"
@@ -4215,6 +4216,7 @@ __metadata:
   resolution: "frontend@workspace:projects/frontend"
   dependencies:
     "@headlessui/react": "npm:^2.1.2"
+    "@repo/config": "workspace:^"
     "@repo/database": "workspace:^"
     "@repo/types": "workspace:^"
     "@types/lodash": "npm:^4"
