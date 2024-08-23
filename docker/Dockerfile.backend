@@ -83,4 +83,4 @@ ENV PORT=8080
 WORKDIR /app/projects/backend
 
 # Start the application using Node.js
-CMD ["node", "-r ts-node/register/transpile-only -r tsconfig-paths/register", "dist/index.js"]
+CMD ["node", "-r", "ts-node/register/transpile-only", "-r", "tsconfig-paths/register", "build/index.js"]
