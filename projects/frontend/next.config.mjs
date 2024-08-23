@@ -4,7 +4,7 @@ import path from 'path'
 const config = {
 	reactStrictMode: true,
 	output: process.env.ENVIRONMENT === 'production' ? 'standalone' : undefined,
-	transpilePackages: ['@repo/database', '@repo/types'],
+	transpilePackages: ['@repo/config', '@repo/database', '@repo/types'],
 	images: {
 		remotePatterns: [{ protocol: 'https', hostname: 'lh3.googleusercontent.com', port: '', pathname: '**' }],
 	},
