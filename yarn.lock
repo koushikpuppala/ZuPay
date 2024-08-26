@@ -2133,9 +2133,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"antd@npm:^5.20.2":
-  version: 5.20.2
-  resolution: "antd@npm:5.20.2"
+"antd@npm:^5.20.3":
+  version: 5.20.3
+  resolution: "antd@npm:5.20.3"
   dependencies:
     "@ant-design/colors": "npm:^7.1.0"
     "@ant-design/cssinjs": "npm:^1.21.0"
@@ -2189,7 +2189,7 @@ __metadata:
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 10c0/7424cc259b57d554427d7ad32a243143935a80b3926d0c276517e405ffc2915a356285138740a87c90f3c8f2097d63563f1ca68f6c6e12d453807630fc19b054
+  checksum: 10c0/c8e278de9d1ac9e4ba5d41f6772e26153c8914abd41abb8cdb40627aa5bbbf1a5939961791fbc84bd4b768d389d92358878eb169519940843aede66303ef53bf
   languageName: node
   linkType: hard
 
@@ -4198,7 +4198,7 @@ __metadata:
     "@types/react": "npm:^18.3.4"
     "@types/react-dom": "npm:^18.3.0"
     animate.css: "npm:^4.1.1"
-    antd: "npm:^5.20.2"
+    antd: "npm:^5.20.3"
     autoprefixer: "npm:^10.4.20"
     classnames: "npm:^2.5.1"
     cssnano: "npm:^7.0.5"
