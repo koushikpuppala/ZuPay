@@ -4351,9 +4351,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^11.9.0":
-  version: 11.9.0
-  resolution: "framer-motion@npm:11.9.0"
+"framer-motion@npm:^11.11.4":
+  version: 11.11.4
+  resolution: "framer-motion@npm:11.11.4"
   dependencies:
     tslib: "npm:^2.4.0"
   peerDependencies:
@@ -4367,7 +4367,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 10c0/d1808a42c748d963be3b0a205a2187ee9efe599e2b0cbfd4196aee2c9587c02563572c925e7c39b9d7c06ad7a92678393725f7acc4ba1cd245db3af9441472e4
+  checksum: 10c0/c189b364c4c1f15b662a2f6cab59f72dd5a55f082d38f6a22126705de9c889426194fabda873dd0c8db490c7601ac5c63d3bc381085d41905e3e6fccc0a923b4
   languageName: node
   linkType: hard
 
@@ -4400,7 +4400,7 @@ __metadata:
     eslint: "npm:^8.56.0"
     eslint-config-next: "npm:^14.2.14"
     firebase: "npm:^10.14.0"
-    framer-motion: "npm:^11.9.0"
+    framer-motion: "npm:^11.11.4"
     lodash: "npm:^4.17.21"
     mongoose: "npm:^8.7.0"
     next: "npm:^14.2.14"
