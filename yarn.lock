@@ -959,18 +959,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@headlessui/react@npm:^2.1.8":
-  version: 2.1.8
-  resolution: "@headlessui/react@npm:2.1.8"
+"@headlessui/react@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "@headlessui/react@npm:2.2.0"
   dependencies:
     "@floating-ui/react": "npm:^0.26.16"
     "@react-aria/focus": "npm:^3.17.1"
     "@react-aria/interactions": "npm:^3.21.3"
     "@tanstack/react-virtual": "npm:^3.8.1"
   peerDependencies:
-    react: ^18
-    react-dom: ^18
-  checksum: 10c0/baed09a6420939540c5a793e5efc9feb036d72fb967a7cbd1559c73e79e46311c7cefe7b7e4d5990ff3ecd7ce5148a7452f5bc8ef5ee6c356fb91c0eb2ca1f71
+    react: ^18 || ^19 || ^19.0.0-rc
+    react-dom: ^18 || ^19 || ^19.0.0-rc
+  checksum: 10c0/af64ef2868405e629f55925d06ab6723b40a9d0802c1bd91e8ae834b6d50e51e0942bcdee44f4b51ce3b82be7c23df49e93713a29486a899d0d56b7ddce78039
   languageName: node
   linkType: hard
 
@@ -4382,7 +4382,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "frontend@workspace:projects/frontend"
   dependencies:
-    "@headlessui/react": "npm:^2.1.8"
+    "@headlessui/react": "npm:^2.2.0"
     "@repo/config": "workspace:^"
     "@repo/database": "workspace:^"
     "@repo/types": "workspace:^"
